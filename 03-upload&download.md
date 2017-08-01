@@ -186,3 +186,18 @@ public class AuthorizationInterceptor  implements HandlerInterceptor {
 </mvc:interceptors>
 ```
 
+针对某种mapping配置拦截器
+
+```
+<bean
+    class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+    <property name="interceptors">
+        <list>
+            <ref bean="handlerInterceptor1"/>
+            <ref bean="handlerInterceptor2"/>
+        </list>
+    </property>
+</bean>
+<bean id="handlerInterceptor1" class="joanna.yan.ssm.interceptor.HandlerInterceptor1"/>
+<bean id="handlerInterceptor2" class="joanna.yan.ssm.interceptor.HandlerInterceptor2"/>
+```
